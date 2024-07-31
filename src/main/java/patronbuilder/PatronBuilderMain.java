@@ -29,6 +29,8 @@ public class PatronBuilderMain {
                 .addContactos("Ruben Blades", "202020", null, "Celular")
                 .addTelefonos("88889999", null, "Celular")
                 .addTelefonos("1010103030", null, "Estudios")
+                .addProgramas("Ingenieria de Sistemas", "123456","138", "8")
+                .addProgramas("Ciencia de datos", "654321","148", "2")
                 .build();
         System.out.println(est);
     }

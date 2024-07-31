@@ -49,7 +49,7 @@ public class Telefonos {
 
     @Override
     public String toString() {
-        return "Telefono{" + "Numero_Telefono=" + numeroTelefono + ", Extensión=" + extension + ", Tipo=" + tipo + '}';
+        return "{" + "\n\tNumero_Telefono: " + numeroTelefono + "\n\tExtensión: " + extension + "\n\tTipo: " + tipo + "\n}";
     }
 
 

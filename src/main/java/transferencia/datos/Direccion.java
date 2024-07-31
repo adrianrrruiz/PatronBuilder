@@ -60,6 +60,6 @@ public class Direccion {
     }
     @Override
     public String toString() {
-        return "Dirección{" + "dirección=" + direccion + ", Ciudad=" + ciudad + ", Pais=" + pais + ", Localidad=" + localidad + '}';
+        return "\tDirección: " + direccion + "\n\tCiudad: " + ciudad + "\n\tPais: " + pais + "\n\tLocalidad: " + localidad;
     }
 }

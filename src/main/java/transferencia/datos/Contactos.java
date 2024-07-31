@@ -52,7 +52,7 @@ public class Contactos {
 
     @Override
     public String toString() {
-        return "Contactos{" + "Nombres=" + nombres + ", Telefonos=" + telefonos + '}';
+        return "{" + "\n\tNombres: " + nombres + "\n\tTelefonos: \n\t" + telefonos + "\n}";
     }
 
 }

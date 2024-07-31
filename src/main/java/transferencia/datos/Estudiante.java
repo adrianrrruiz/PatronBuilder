@@ -20,15 +20,17 @@ public class Estudiante {
     private Direccion direccion;
     private List<Telefonos> telefonos;
     private List<Contactos> contactos;
+    private List<Programa> programas;
 
     private Estudiante(String nombre, int edad, String genero, Direccion direccion,
-                       List<Telefonos> telefonos, List<Contactos> contactos) {
+                       List<Telefonos> telefonos, List<Contactos> contactos, List<Programa> programas) {
         this.nombre = nombre;
         this.edad = edad;
         this.genero = genero;
         this.direccion = direccion;
         this.telefonos = telefonos;
         this.contactos = contactos;
+        this.programas = programas;
     }
 
     private Estudiante(String nombre, int edad, String genero) {
@@ -89,11 +91,15 @@ public class Estudiante {
         this.contactos = contactos;
     }
 
+    public List<Programa> getProgramas() {return programas;}
+
+    public void setProgramas(List<Programa> programas) {this.programas = programas;}
+
     @Override
     public String toString() {
-        return "Estudiante{" + "Nombre=" + nombre + ", Edad=" + edad + ", Genero="
-                + genero + ", \nDirección=" + direccion + ", \nTelefono=" + telefonos
-                + ", \nContactos=" + contactos + '}';
+        return "ESTUDIANTE:" + "\nNombre: " + nombre + "\nEdad: " + edad + "\nGenero: "
+                + genero + "\nDirección: \n" + direccion + "\nTelefono: \n" + telefonos
+                + "\nContactos: \n" + contactos + "\nProgramas: \n" + programas;
     }
 
     public static class EstudianteBuilder implements InterfaceBuilder<Estudiante>{
@@ -104,6 +110,7 @@ public class Estudiante {
         private Direccion direccion;
         private final List<Telefonos> telefonos = new ArrayList<>();
         private final List<Contactos> contactos = new ArrayList<>();
+        private final List<Programa> programas = new ArrayList<>();
 
         public EstudianteBuilder() {
         }
@@ -150,10 +157,13 @@ public class Estudiante {
             return this;
         }
 
-        @Override
-        public Estudiante build() {
-            return new Estudiante(nombre, edad, genero, direccion, telefonos, contactos);
+        public EstudianteBuilder addProgramas(String nombre, String codigo, String creditos, String semestre) {
+            programas.add(new Programa(nombre, codigo, creditos, semestre));
+            return this;
         }
+
+        @Override
+        public Estudiante build() {return new Estudiante(nombre, edad, genero, direccion, telefonos, contactos, programas);}
 
     }
 }
